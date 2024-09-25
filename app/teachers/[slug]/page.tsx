@@ -24,7 +24,7 @@ export default function TeacherProfileComponent() {
         </div>
         <div className="space-y-6">
           <CTA />
-          <ContactInfo />
+          {/* <ContactInfo /> */}
           {/* <Accolades /> */}
           <RelatedItems />
         </div>
