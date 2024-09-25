@@ -30,7 +30,7 @@ export default function TeacherCard({ teacher }) {
           <p className="text-sm text-muted-foreground">{teacher_static.qualifications}</p>
         </div>
       </CardHeader>
-      <CardContent>
+      {/* <CardContent>
         <div className="mb-2">
           {teacher_static.subjects.map(subject => (
             <Badge key={subject} variant="secondary" className="mr-1 mb-1">
@@ -43,7 +43,7 @@ export default function TeacherCard({ teacher }) {
           <span className="font-semibold mr-2">{teacher_static.rating}</span>
           <span className="text-sm text-muted-foreground">({teacher_static.reviews} reviews)</span>
         </div>
-      </CardContent>
+      </CardContent> */}
       <CardFooter>
         <Button className="w-full" asChild>
           <Link href={`/teachers/${teacher.id}`}>View Profile</Link>

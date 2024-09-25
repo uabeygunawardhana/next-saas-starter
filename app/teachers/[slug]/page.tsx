@@ -16,15 +16,16 @@ export default function TeacherProfileComponent() {
       <div className="grid gap-6 md:grid-cols-3">
         <div className="md:col-span-2 space-y-6">
           <TeacherHeader />
-          <Qualifications />
           <Bio />
+          <Qualifications />
+          <Accolades />
           <CoursesOffered />
-          <RatingsAndReviews />
+          {/* <RatingsAndReviews /> */}
         </div>
         <div className="space-y-6">
           <CTA />
           <ContactInfo />
-          <Accolades />
+          {/* <Accolades /> */}
           <RelatedItems />
         </div>
       </div>
