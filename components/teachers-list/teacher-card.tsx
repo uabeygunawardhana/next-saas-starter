@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-
+import { TeacherProfile } from "@/lib/db/schema"
 const teacher_static = 
   {
     id: 1,
@@ -17,16 +17,16 @@ const teacher_static =
     featured: true
   }
 
-export default function TeacherCard({ teacher }) {
+export default function TeacherCard({ teacher }: { teacher: TeacherProfile }) {
   return (
     <Card>
       <CardHeader className="flex flex-row items-center gap-4">
         <Avatar className="w-16 h-16">
-          <AvatarImage src="/profile.png" alt={teacher_static.name} />
-          <AvatarFallback>{teacher_static.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+          <AvatarImage src="/profile.png" alt={teacher.name} />
+          <AvatarFallback>{teacher.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
         </Avatar>
         <div>
-          <CardTitle>{teacher_static.name}</CardTitle>
+          <CardTitle>{teacher.name}</CardTitle>
           <p className="text-sm text-muted-foreground">{teacher_static.qualifications}</p>
         </div>
       </CardHeader>

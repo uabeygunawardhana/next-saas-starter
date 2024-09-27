@@ -1,9 +1,11 @@
 import { redirect } from 'next/navigation';
 import { Settings } from './settings';
-import { getTeamForUser, getUser } from '@/lib/db/queries';
+import { getTeamForUser, getUser, getTeacherProfiles } from '@/lib/db/queries';
 
 export default async function SettingsPage() {
   const user = await getUser();
+
+  const teacherProfiles = await getTeacherProfiles();
 
   if (!user) {
     redirect('/login');
@@ -15,5 +17,6 @@ export default async function SettingsPage() {
     throw new Error('Team not found');
   }
 
-  return <Settings teamData={teamData} />;
+  // return <Settings teamData={teamData} />;
+  return <div>{JSON.stringify(teacherProfiles)}</div>;
 }

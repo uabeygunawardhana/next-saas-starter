@@ -1,6 +1,4 @@
-'use client'
-
-import { useState } from 'react'
+// import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import Filters from "@/components/teachers-list/filters"
 import SearchBar from "@/components/teachers-list/search-bar"
@@ -8,6 +6,7 @@ import SortingOptions from "@/components/teachers-list/sorting-options"
 import FeaturedTeachers from "@/components/teachers-list/featured-teachers"
 import TeacherList from "@/components/teachers-list/teacher-list"
 import Pagination from "@/components/teachers-list/pagination"
+import { getTeacherProfiles } from '@/lib/db/queries';
 
 const teachers = [
   {
@@ -52,15 +51,16 @@ const teachers = [
   }
 ]
 
-export default function TeacherListingsComponent() {
-  const [searchTerm, setSearchTerm] = useState("")
-  const [priceRange, setPriceRange] = useState([0, 100])
+export default async function TeacherListingsComponent() {
+  // const [searchTerm, setSearchTerm] = useState("")
+  // const [priceRange, setPriceRange] = useState([0, 100])
+  const teacherProfiles = await getTeacherProfiles();
 
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">Find Your Perfect Teacher</h1>
 
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      {/* <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> */}
 
       {/* <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4">Featured Teachers</h2>
@@ -71,7 +71,7 @@ export default function TeacherListingsComponent() {
         {/* <Filters priceRange={priceRange} setPriceRange={setPriceRange} /> */}
         <main className="flex-1">
           <SortingOptions />
-          <TeacherList teachers={teachers} />
+          <TeacherList teachers={teacherProfiles} />
           <Pagination />
         </main>
       </div>

@@ -1,6 +1,6 @@
 import { desc, and, eq, isNull } from 'drizzle-orm';
 import { db } from './drizzle';
-import { activityLogs, teamMembers, teams, users } from './schema';
+import { activityLogs, teacherProfiles, teamMembers, teams, users } from './schema';
 import { cookies } from 'next/headers';
 import { verifyToken } from '@/lib/auth/session';
 
@@ -131,5 +131,13 @@ export async function getTeamForUser(userId: number) {
 // get all teacher profiles
 export async function getTeacherProfiles() {
   const result = await db.query.teacherProfiles.findMany();
+  return result;
+}
+
+// get teacher profile by id
+export async function getTeacherProfileById(id: number) {
+  const result = await db.query.teacherProfiles.findFirst({
+    where: eq(teacherProfiles.id, id),
+  });
   return result;
 }
