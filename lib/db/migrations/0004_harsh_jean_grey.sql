@@ -1,0 +1,1 @@
+ALTER TABLE "teacher_profiles" ALTER COLUMN "data" SET NOT NULL;

@@ -130,7 +130,11 @@ export async function getTeamForUser(userId: number) {
 
 // get all teacher profiles
 export async function getTeacherProfiles() {
-  const result = await db.query.teacherProfiles.findMany();
+  const result = await db.query.teacherProfiles.findMany({
+    where: eq(teacherProfiles.type, 'SUMMARY'),
+    orderBy: desc(teacherProfiles.id),
+    limit: 10,
+  });
   return result;
 }
 

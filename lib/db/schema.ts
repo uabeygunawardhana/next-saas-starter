@@ -5,6 +5,7 @@ import {
   text,
   timestamp,
   integer,
+  jsonb,
 } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 
@@ -72,6 +73,8 @@ export const invitations = pgTable('invitations', {
 export const teacherProfiles = pgTable('teacher_profiles', {
   id: serial('id').primaryKey(),
   name: varchar('name', { length: 100 }).notNull(),
+  type: varchar('type', { length: 50 }).notNull().default('SUMMARY'),
+  data: jsonb('data').notNull().$type<Record<string, any>>(),
   createdAt: timestamp('created_at').notNull().defaultNow(),
   updatedAt: timestamp('updated_at').notNull().defaultNow(),
 });

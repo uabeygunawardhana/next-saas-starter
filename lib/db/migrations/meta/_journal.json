@@ -15,6 +15,27 @@
       "when": 1727153334432,
       "tag": "0001_nosy_clea",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1727846110795,
+      "tag": "0002_woozy_red_wolf",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1727846591343,
+      "tag": "0003_greedy_power_pack",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1727846714384,
+      "tag": "0004_harsh_jean_grey",
+      "breakpoints": true
     }
   ]
 }

@@ -27,7 +27,7 @@ export default function TeacherCard({ teacher }: { teacher: TeacherProfile }) {
         </Avatar>
         <div>
           <CardTitle>{teacher.name}</CardTitle>
-          <p className="text-sm text-muted-foreground">{teacher_static.qualifications}</p>
+          <p className="text-sm text-muted-foreground">{teacher.data.summary}</p>
         </div>
       </CardHeader>
       {/* <CardContent>
